@@ -1,5 +1,5 @@
 import { ActionConfig, LovelaceCardConfig } from "custom-card-helpers";
-import { assign, boolean, object, optional, string } from "superstruct";
+import { assign, boolean, number, object, optional, string } from "superstruct";
 import { actionConfigStruct } from "../../utils/action-struct";
 import { baseLovelaceCardConfig } from "../../utils/editor-styles";
 import { Layout, layoutStruct } from "../../utils/layout";
@@ -16,6 +16,8 @@ export interface LightCardConfig extends LovelaceCardConfig {
     show_color_control?: boolean;
     collapsible_controls?: boolean;
     use_light_color?: boolean;
+    brightness_control_set_min?: number;
+    brightness_control_set_max?: number;
     tap_action?: ActionConfig;
     hold_action?: ActionConfig;
     double_tap_action?: ActionConfig;
@@ -35,6 +37,8 @@ export const lightCardConfigStruct = assign(
         show_color_temp_control: optional(boolean()),
         show_color_control: optional(boolean()),
         collapsible_controls: optional(boolean()),
+        brightness_control_set_min: optional(number()),
+        brightness_control_set_max: optional(number()),
         tap_action: optional(actionConfigStruct),
         hold_action: optional(actionConfigStruct),
         double_tap_action: optional(actionConfigStruct),
