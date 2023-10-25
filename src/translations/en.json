@@ -144,6 +144,10 @@
                     "slider": "Slider",
                     "buttons": "Buttons"
                 }
+            },
+            "countdown": {
+                "timeup_message": "Time's Up Message",
+                "unknown_message": "Unknown State Message"
             }
         },
         "chip": {
