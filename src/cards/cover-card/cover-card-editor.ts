@@ -16,6 +16,9 @@ const COVER_LABELS = [
     "show_buttons_control",
     "show_position_control",
     "show_tilt_position_control",
+    "close_cover_action",
+    "stop_cover_action",
+    "open_cover_action"
 ];
 
 const SCHEMA: HaFormSchema[] = [
@@ -31,6 +34,18 @@ const SCHEMA: HaFormSchema[] = [
             { name: "show_tilt_position_control", selector: { boolean: {} } },
             { name: "show_buttons_control", selector: { boolean: {} } },
         ],
+    },
+    {
+        name: "close_cover_action",
+        selector: { "ui-action": {actions: ["call-service"] } },
+    },
+    {
+        name: "stop_cover_action",
+        selector: { "ui-action": {actions: ["call-service"] } },
+    },
+    {
+        name: "open_cover_action",
+        selector: { "ui-action": {actions: ["call-service"] } },
     },
     ...computeActionsFormSchema(),
 ];
